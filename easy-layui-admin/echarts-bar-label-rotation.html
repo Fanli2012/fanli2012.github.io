@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <title>Easy Layui Admin后台管理</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="plugin/layui/css/layui.css" media="all">
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="plugin/layui/layui.js"></script>
+    <script type="text/javascript" src="js/echarts.min.js"></script>
+</head>
+
+<body>
+
+    <div class="admin-content-box-nav">
+        <span class="layui-breadcrumb" lay-filter="breadcrumb" style="visibility:visible;">
+            <a href="javascript:;">首页</a><span lay-separator="">/</span>
+            <a href="javascript:;">统计报表</a><span lay-separator="">/</span>
+            <a><cite>柱状图</cite></a>
+        </span>
+    </div>
+
+    <blockquote class="layui-elem-quote" style="margin:15px;">
+        特别声明：ECharts，一个纯 Javascript 的图表库，可以流畅的运行在 PC 和移动设备上，兼容当前绝大部分浏览器（IE8/9/10/11，Chrome，Firefox，Safari等），底层依赖轻量级的
+        Canvas
+        类库 ZRender，提供直观，生动，可交互，可高度个性化定制的数据可视化图表。WeAdmin提示：如需使用或者详细更多案例可以访问官网 <a href="http://echarts.baidu.com/"
+            style="color:red">ECharts</a>。
+    </blockquote>
+
+    <!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
+    <div style="margin:0 15px 15px 15px;">
+        <div id="echarts-box" style="width:100%;height:400px;"></div>
+    </div>
+
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('echarts-box'));
+
+        var app = {};
+        option = null;
+
+        var posList = [
+            'left', 'right', 'top', 'bottom',
+            'inside',
+            'insideTop', 'insideLeft', 'insideRight', 'insideBottom',
+            'insideTopLeft', 'insideTopRight', 'insideBottomLeft', 'insideBottomRight'
+        ];
+
+        app.configParameters = {
+            rotate: {
+                min: -90,
+                max: 90
+            },
+            align: {
+                options: {
+                    left: 'left',
+                    center: 'center',
+                    right: 'right'
+                }
+            },
+            verticalAlign: {
+                options: {
+                    top: 'top',
+                    middle: 'middle',
+                    bottom: 'bottom'
+                }
+            },
+            position: {
+                options: echarts.util.reduce(posList, function (map, pos) {
+                    map[pos] = pos;
+                    return map;
+                }, {})
+            },
+            distance: {
+                min: 0,
+                max: 100
+            }
+        };
+
+        app.config = {
+            rotate: 90,
+            align: 'left',
+            verticalAlign: 'middle',
+            position: 'insideBottom',
+            distance: 15,
+            onChange: function () {
+                var labelOption = {
+                    normal: {
+                        rotate: app.config.rotate,
+                        align: app.config.align,
+                        verticalAlign: app.config.verticalAlign,
+                        position: app.config.position,
+                        distance: app.config.distance
+                    }
+                };
+                myChart.setOption({
+                    series: [{
+                        label: labelOption
+                    }, {
+                        label: labelOption
+                    }, {
+                        label: labelOption
+                    }, {
+                        label: labelOption
+                    }]
+                });
+            }
+        };
+
+
+        var labelOption = {
+            normal: {
+                show: true,
+                position: app.config.position,
+                distance: app.config.distance,
+                align: app.config.align,
+                verticalAlign: app.config.verticalAlign,
+                rotate: app.config.rotate,
+                formatter: '{c}  {name|{a}}',
+                fontSize: 16,
+                rich: {
+                    name: {
+                        textBorderColor: '#fff'
+                    }
+                }
+            }
+        };
+
+        option = {
+            title: {
+                text: '柱状图'
+            },
+            color: ['#003366', '#006699', '#4cabce', '#e5323e'],
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {
+                    type: 'shadow'
+                }
+            },
+            legend: {
+                data: ['Forest', 'Steppe', 'Desert', 'Wetland']
+            },
+            toolbox: {
+                show: true,
+                orient: 'vertical',
+                left: 'right',
+                top: 'center',
+                feature: {
+                    mark: { show: true },
+                    dataView: { show: true, readOnly: false },
+                    magicType: { show: true, type: ['line', 'bar', 'stack', 'tiled'] },
+                    restore: { show: true },
+                    saveAsImage: { show: true }
+                }
+            },
+            calculable: true,
+            xAxis: [
+                {
+                    type: 'category',
+                    axisTick: { show: false },
+                    data: ['2012', '2013', '2014', '2015', '2016']
+                }
+            ],
+            yAxis: [
+                {
+                    type: 'value'
+                }
+            ],
+            series: [
+                {
+                    name: 'Forest',
+                    type: 'bar',
+                    barGap: 0,
+                    label: labelOption,
+                    data: [320, 332, 301, 334, 390]
+                },
+                {
+                    name: 'Steppe',
+                    type: 'bar',
+                    label: labelOption,
+                    data: [220, 182, 191, 234, 290]
+                },
+                {
+                    name: 'Desert',
+                    type: 'bar',
+                    label: labelOption,
+                    data: [150, 232, 201, 154, 190]
+                },
+                {
+                    name: 'Wetland',
+                    type: 'bar',
+                    label: labelOption,
+                    data: [98, 77, 101, 99, 40]
+                }
+            ]
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        if (option && typeof option === "object") {
+            myChart.setOption(option, true);
+        }
+    </script>
+</body>
+
+</html>

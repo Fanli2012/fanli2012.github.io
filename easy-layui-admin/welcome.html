@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+  <title>Easy Layui Admin后台管理</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="plugin/layui/css/layui.css" media="all">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="plugin/layui/layui.js"></script>
+</head>
+
+<body>
+  <div class="layui-fluid" style="margin-top:15px;">
+    <blockquote class="layui-elem-quote">
+      <p>Easy Layui Admin后台模版基于Layui2.5.4实现，GitHub地址：<a target="_blank" href="https://github.com/Fanli2012/easy-layui-admin">https://github.com/Fanli2012/easy-layui-admin</a></p>
+      <p class="layui-blue">意见 / 交流：277023115@qq.com</p>
+    </blockquote>
+
+    <div class="layui-row">
+      <div class="layui-col-lg6 layui-col-md12">
+        <blockquote class="layui-elem-quote" style="padding:10px 15px;margin-bottom:0;">服务器信息</blockquote>
+        <table class="layui-table" style="margin-top:0;">
+          <tbody>
+            <tr>
+              <th width="30%">服务器计算机名</th>
+              <td><span>http://127.0.0.1/</span></td>
+            </tr>
+            <tr>
+              <td>服务器IP地址</td>
+              <td>192.168.1.1</td>
+            </tr>
+            <tr>
+              <td>服务器域名</td>
+              <td>github.com</td>
+            </tr>
+            <tr>
+              <td>服务器端口 </td>
+              <td>80</td>
+            </tr>
+            <tr>
+              <td>本文件所在文件夹 </td>
+              <td>/var/www/easy_layui_admin</td>
+            </tr>
+            <tr>
+              <td>当前时间 </td>
+              <td id="firstTime">2018-01-01 13:14:00</td>
+            </tr>
+            <tr>
+              <td>上次更新时间 </td>
+              <td id="lastTime">2019-06-20 16:00:00</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <blockquote class="layui-elem-quote" style="padding:10px 15px;margin-bottom:0;">最新文章</blockquote>
+        <table class="layui-table" style="margin-top:0;">
+          <colgroup>
+            <col>
+            <col width="110">
+          </colgroup>
+          <tbody class="hot_news">
+            <tr>
+              <td align="left"><a href="javascript:;"> css3用transition实现边框动画效果</a></td>
+              <td>2017-04-14</td>
+            </tr>
+            <tr>
+              <td align="left"><a href="javascript:;"> 自定义的模块名称可以包含/吗</a></td>
+              <td>2017-04-14</td>
+            </tr>
+            <tr>
+              <td align="left"><a href="javascript:;"> layui.tree如何ajax加载二级菜单</a></td>
+              <td>2017-04-14</td>
+            </tr>
+            <tr>
+              <td align="left"><a href="javascript:;"> layui.upload如何带参数？像jq的data:{}那样</a></td>
+              <td>2017-04-14</td>
+            </tr>
+            <tr>
+              <td align="left"><a href="javascript:;"> 表单元素长度应该怎么调整才美观</a></td>
+              <td>2017-04-14</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="layui-col-lg6 layui-col-md12">
+        <div style="margin-left:10px;border:1px solid #e6e6e6;">
+          <blockquote class="layui-elem-quote" style="padding:10px 15px;margin-bottom:10px;">快捷方式</blockquote>
+          <div style="padding:0 10px 10px 10px;">
+            <ul class="layui-row layui-col-space10 admin-shortcut">
+              <li class="layui-col-xs3">
+                <a target="_blank" href="https://www.layui.com/doc/">
+                  <i class="layui-icon layui-icon-read"></i>
+                  <cite>Layui文档</cite>
+                </a>
+              </li>
+              <li class="layui-col-xs3">
+                <a target="_blank" href="https://www.layui.com/admin/">
+                  <i class="layui-icon layui-icon-template-1"></i>
+                  <cite>LayuiAdmin</cite>
+                </a>
+              </li>
+              <li class="layui-col-xs3">
+                <a target="_blank" href="https://github.com/Fanli2012/easy-layui-admin">
+                  <i class="layui-icon layui-icon-diamond"></i>
+                  <cite>Github下载</cite>
+                </a>
+              </li>
+              <li class="layui-col-xs3">
+                <a href="javascript:;">
+                  <i class="layui-icon layui-icon-chat"></i>
+                  <cite>聊天</cite>
+                </a>
+              </li>
+              <li class="layui-col-xs3">
+                <a href="javascript:;">
+                  <i class="layui-icon layui-icon-find-fill"></i>
+                  <cite>进度条</cite>
+                </a>
+              </li>
+              <li class="layui-col-xs3">
+                <a href="javascript:;">
+                  <i class="layui-icon layui-icon-survey"></i>
+                  <cite>工单</cite>
+                </a>
+              </li>
+              <li class="layui-col-xs3">
+                <a href="user-list.html">
+                  <i class="layui-icon layui-icon-user"></i>
+                  <cite>用户</cite>
+                </a>
+              </li>
+              <li class="layui-col-xs3">
+                <a href="setting-siteinfo.html">
+                  <i class="layui-icon layui-icon-set"></i>
+                  <cite>设置</cite>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <style>
+            .admin-shortcut li {
+              text-align: center;
+            }
+
+            .admin-shortcut li .layui-icon {
+              display: inline-block;
+              width: 100%;
+              height: 60px;
+              line-height: 60px;
+              text-align: center;
+              border-radius: 2px;
+              font-size: 30px;
+              background-color: #F8F8F8;
+              color: #333;
+              transition: all .3s;
+              -webkit-transition: all .3s;
+            }
+
+            .admin-shortcut li cite {
+              position: relative;
+              top: 2px;
+              display: block;
+              color: #666;
+              text-overflow: ellipsis;
+              overflow: hidden;
+              white-space: nowrap;
+              font-size: 14px;
+            }
+
+            .admin-shortcut li:hover .layui-icon {
+              background-color: #f2f2f2;
+            }
+          </style>
+          <blockquote class="layui-elem-quote" style="padding:10px 15px;margin-bottom:10px;">更新日志</blockquote>
+          <ul class="layui-timeline">
+            <li class="layui-timeline-item">
+              <i class="layui-icon layui-timeline-axis"></i>
+              <div class="layui-timeline-content layui-text">
+                <h3 class="layui-timeline-title">8月18日</h3>
+                <p>
+                  layui 2.0 的一切准备工作似乎都已到位。发布之弦，一触即发。
+                  <br>不枉近百个日日夜夜与之为伴。因小而大，因弱而强。
+                  <br>无论它能走多远，抑或如何支撑？至少我曾倾注全心，无怨无悔 <i class="layui-icon"></i>
+                </p>
+              </div>
+            </li>
+            <li class="layui-timeline-item">
+              <i class="layui-icon layui-timeline-axis"></i>
+              <div class="layui-timeline-content layui-text">
+                <h3 class="layui-timeline-title">8月16日</h3>
+                <p>杜甫的思想核心是儒家的仁政思想，他有<em>“致君尧舜上，再使风俗淳”</em>的宏伟抱负。个人最爱的名篇有：</p>
+                <ul>
+                  <li>《登高》</li>
+                  <li>《茅屋为秋风所破歌》</li>
+                </ul>
+              </div>
+            </li>
+            <li class="layui-timeline-item">
+              <i class="layui-icon layui-timeline-axis"></i>
+              <div class="layui-timeline-content layui-text">
+                <h3 class="layui-timeline-title">8月15日</h3>
+                <p>
+                  中国人民抗日战争胜利日
+                  <br>常常在想，尽管对这个国家有这样那样的抱怨，但我们的确生在了最好的时代
+                  <br>铭记、感恩
+                  <br>所有为中华民族浴血奋战的英雄将士
+                  <br>永垂不朽
+                </p>
+              </div>
+            </li>
+            <li class="layui-timeline-item">
+              <i class="layui-icon layui-timeline-axis"></i>
+              <div class="layui-timeline-content layui-text">
+                <div class="layui-timeline-title">过去</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+
+</html>
