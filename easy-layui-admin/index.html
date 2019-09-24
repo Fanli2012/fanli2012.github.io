@@ -42,33 +42,47 @@
 	<div class="left-nav">
 		<div id="side-nav">
 			<ul class="nav" id="nav">
-				<li id="menu8" class="open"><a _href=""><i class="layui-icon layui-icon-read"></i><cite>文章管理</cite><i class="layui-icon nav_right"></i></a>
+				<li id="menu8" class="open"><a _href=""><i class="layui-icon layui-icon-read"></i><cite>文章管理</cite><i
+							class="layui-icon nav_right"></i></a>
 					<ul class="sub-menu">
-						<li id="menu9"><a _href="./article-list.html"><i class="layui-icon layui-icon-right"></i><cite>文章列表</cite></a></li>
-						<li id="menu10"><a _href="./articletype-list.html"><i class="layui-icon layui-icon-right"></i><cite>分类管理</cite></a></li>
+						<li id="menu9"><a _href="./article-list.html"><i
+									class="layui-icon layui-icon-right"></i><cite>文章列表</cite></a></li>
+						<li id="menu10"><a _href="./articletype-list.html"><i
+									class="layui-icon layui-icon-right"></i><cite>分类管理</cite></a></li>
 					</ul>
 				</li>
-				<li id="menu1"><a _href=""><i class="layui-icon layui-icon-user"></i><cite>会员管理</cite><i class="layui-icon nav_right"></i></a>
+				<li id="menu1"><a _href=""><i class="layui-icon layui-icon-user"></i><cite>会员管理</cite><i
+							class="layui-icon nav_right"></i></a>
 					<ul class="sub-menu">
-						<li id="menu2"><a _href="user-list.html"><i class="layui-icon layui-icon-right"></i><cite>会员列表</cite></a></li>
-						<li id="menu4"><a _href=""><i class="layui-icon layui-icon-right"></i><cite>三级菜单</cite><i class="layui-icon nav_right"></i></a>
+						<li id="menu2"><a _href="user-list.html"><i
+									class="layui-icon layui-icon-right"></i><cite>会员列表</cite></a></li>
+						<li id="menu4"><a _href=""><i class="layui-icon layui-icon-right"></i><cite>三级菜单</cite><i
+									class="layui-icon nav_right"></i></a>
 							<ul class="sub-menu">
-								<li id="menu6"><a _href="echarts-stacked-line-chart.html"><i class="layui-icon layui-icon-right"></i><cite>拆线图</cite></a></li>
-								<li id="menu7"><a _href="echarts-bar-label-rotation.html"><i class="layui-icon layui-icon-right"></i><cite>柱状图</cite></a></li>
+								<li id="menu6"><a _href="echarts-stacked-line-chart.html"><i
+											class="layui-icon layui-icon-right"></i><cite>拆线图</cite></a></li>
+								<li id="menu7"><a _href="echarts-bar-label-rotation.html"><i
+											class="layui-icon layui-icon-right"></i><cite>柱状图</cite></a></li>
 							</ul>
 						</li>
 					</ul>
 				</li>
-				<li id="menu18"><a _href=""><i class="layui-icon layui-icon-chart"></i><cite>报表统计</cite><i class="layui-icon nav_right"></i></a>
+				<li id="menu18"><a _href=""><i class="layui-icon layui-icon-chart"></i><cite>报表统计</cite><i
+							class="layui-icon nav_right"></i></a>
 					<ul class="sub-menu">
-						<li id="menu19"><a _href="echarts-stacked-line-chart.html"><i class="layui-icon layui-icon-right"></i><cite>拆线图</cite></a></li>
-						<li id="menu20"><a _href="echarts-bar-label-rotation.html"><i class="layui-icon layui-icon-right"></i><cite>柱状图</cite></a></li>
-						<li id="menu21"><a _href="echarts-pie-with-scrollable-legend.html"><i class="layui-icon layui-icon-right"></i><cite>饼图</cite></a></li>
+						<li id="menu19"><a _href="echarts-stacked-line-chart.html"><i
+									class="layui-icon layui-icon-right"></i><cite>拆线图</cite></a></li>
+						<li id="menu20"><a _href="echarts-bar-label-rotation.html"><i
+									class="layui-icon layui-icon-right"></i><cite>柱状图</cite></a></li>
+						<li id="menu21"><a _href="echarts-pie-with-scrollable-legend.html"><i
+									class="layui-icon layui-icon-right"></i><cite>饼图</cite></a></li>
 					</ul>
 				</li>
-				<li id="menu13"><a _href=""><i class="layui-icon layui-icon-note"></i><cite>设置</cite><i class="layui-icon nav_right"></i></a>
+				<li id="menu13"><a _href=""><i class="layui-icon layui-icon-note"></i><cite>设置</cite><i
+							class="layui-icon nav_right"></i></a>
 					<ul class="sub-menu">
-						<li id="menu14"><a _href="setting-siteinfo.html"><i class="layui-icon layui-icon-right"></i><cite>网站设置</cite></a></li>
+						<li id="menu14"><a _href="setting-siteinfo.html"><i
+									class="layui-icon layui-icon-right"></i><cite>网站设置</cite></a></li>
 					</ul>
 				</li>
 			</ul>
@@ -77,7 +91,8 @@
 	<!-- 左侧菜单结束 -->
 	<!-- 右侧主体开始 -->
 	<div class="page-content">
-		<iframe src='welcome.html' frameborder="0" scrolling="yes" allowtransparency="true" id="appiframe" name="appiframe"></iframe>
+		<iframe src='welcome.html' frameborder="0" scrolling="yes" allowtransparency="true" id="appiframe"
+			name="appiframe"></iframe>
 	</div>
 	<!-- 右侧主体结束 -->
 	<!-- 中部结束 -->
@@ -86,9 +101,9 @@
 		 * @todo 左侧菜单事件
 		 * 如果有子级就展开，没有就打开frame
 		 */
-		$('body').on('click', '.left-nav #nav li', function(event) {
-			if($(this).children('.sub-menu').length) {
-				if($(this).hasClass('open')) {
+		$('body').on('click', '.left-nav #nav li', function (event) {
+			if ($(this).children('.sub-menu').length) {
+				if ($(this).hasClass('open')) {
 					$(this).removeClass('open');
 					$(this).find('.nav_right').removeClass('layui-icon-down');
 					$(this).find('.nav_right').addClass('layui-icon-up');
@@ -113,9 +128,9 @@
 			}
 			event.stopPropagation(); //不触发任何前辈元素上的事件处理函数
 		});
-		
+
 		//左侧菜单事件右侧图标初始化
-		$(document).ready(function(){
+		$(document).ready(function () {
 			$('.nav_right').removeClass('layui-icon-up');
 			$('.nav_right').removeClass('layui-icon-down');
 			$('.nav_right').addClass('layui-icon-up');

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+  <title>注册</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="plugin/layui/css/layui.css" media="all">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="plugin/layui/layui.js"></script>
+  <style>
+    body,
+    html {
+      height: 100%
+    }
+
+    html {
+      background-color: #f2f2f2;
+      color: #666;
+    }
+
+    .layui-layout-body {
+      overflow: auto
+    }
+
+    #LAY-user-login,
+    .layadmin-user-display-show {
+      display: block !important
+    }
+
+    .layadmin-user-login {
+      position: relative;
+      left: 0;
+      top: 0;
+      padding: 110px 0;
+      min-height: 100%;
+      box-sizing: border-box
+    }
+
+    .layadmin-user-login-main {
+      width: 375px;
+      margin: 0 auto;
+      box-sizing: border-box
+    }
+
+    .layadmin-user-login-box {
+      padding: 20px
+    }
+
+    .layadmin-user-login-header {
+      text-align: center
+    }
+
+    .layadmin-user-login-header h2 {
+      margin-bottom: 10px;
+      font-weight: 300;
+      font-size: 30px;
+      color: #000
+    }
+
+    .layadmin-user-login-header p {
+      font-weight: 300;
+      color: #999
+    }
+
+    .layadmin-user-login-body .layui-form-item {
+      position: relative
+    }
+
+    .layadmin-user-login-icon {
+      position: absolute;
+      left: 1px;
+      top: 1px;
+      width: 38px;
+      line-height: 36px;
+      text-align: center;
+      color: #d2d2d2
+    }
+
+    .layadmin-user-login-body .layui-form-item .layui-input {
+      padding-left: 38px
+    }
+
+    .layadmin-user-login-codeimg {
+      max-height: 38px;
+      width: 100%;
+      cursor: pointer;
+      box-sizing: border-box
+    }
+
+    .layadmin-user-login-other {
+      position: relative;
+      font-size: 0;
+      line-height: 38px;
+      padding-top: 20px
+    }
+
+    .layadmin-user-login-other>* {
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 10px;
+      font-size: 14px
+    }
+
+    .layadmin-user-login-other .layui-icon {
+      position: relative;
+      top: 2px;
+      font-size: 26px
+    }
+
+    .layadmin-user-login-other a:hover {
+      opacity: .8
+    }
+
+    .layadmin-user-jump-change {
+      float: right
+    }
+
+    .layadmin-user-login-footer {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      line-height: 30px;
+      padding: 20px;
+      text-align: center;
+      box-sizing: border-box;
+      color: rgba(0, 0, 0, .5)
+    }
+
+    .layadmin-user-login-footer span {
+      padding: 0 5px
+    }
+
+    .layadmin-user-login-footer a {
+      padding: 0 5px;
+      color: rgba(0, 0, 0, .5)
+    }
+
+    .layadmin-user-login-footer a:hover {
+      color: rgba(0, 0, 0, 1)
+    }
+
+    .layadmin-user-login-main[bgimg] {
+      background-color: #fff;
+      box-shadow: 0 0 5px rgba(0, 0, 0, .05)
+    }
+
+    .ladmin-user-login-theme {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      text-align: center
+    }
+
+    .ladmin-user-login-theme ul {
+      display: inline-block;
+      padding: 5px;
+      background-color: #fff
+    }
+
+    .ladmin-user-login-theme ul li {
+      display: inline-block;
+      vertical-align: top;
+      width: 64px;
+      height: 43px;
+      cursor: pointer;
+      transition: all .3s;
+      -webkit-transition: all .3s;
+      background-color: #f2f2f2
+    }
+
+    .ladmin-user-login-theme ul li:hover {
+      opacity: .9
+    }
+
+    @media screen and (max-width:768px) {
+      .layadmin-user-login {
+        padding-top: 60px
+      }
+
+      .layadmin-user-login-main {
+        width: 300px
+      }
+
+      .layadmin-user-login-box {
+        padding: 10px
+      }
+    }
+
+    .layui-icon-login-qq {
+      color: #3492ED;
+    }
+
+    .layui-icon-login-wechat {
+      color: #4DAF29;
+    }
+
+    .layui-icon-login-weibo {
+      color: #CF1900;
+    }
+
+    .layadmin-link {
+      color: #029789 !important;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="layadmin-user-login layadmin-user-display-show" id="LAY-user-login">
+    <div class="layadmin-user-login-main">
+      <div class="layadmin-user-login-box layadmin-user-login-header">
+        <h2>注册</h2>
+        <p>Easy Layui Admin后台管理</p>
+      </div>
+      <div class="layadmin-user-login-box layadmin-user-login-body layui-form">
+        <div class="layui-form-item">
+          <label class="layadmin-user-login-icon layui-icon layui-icon-cellphone"
+            for="LAY-user-login-cellphone"></label>
+          <input type="text" name="cellphone" id="LAY-user-login-cellphone" lay-verify="phone" placeholder="手机"
+            class="layui-input">
+        </div>
+        <div class="layui-form-item">
+          <div class="layui-row">
+            <div class="layui-col-xs7">
+              <label class="layadmin-user-login-icon layui-icon layui-icon-vercode"
+                for="LAY-user-login-vercode"></label>
+              <input type="text" name="vercode" id="LAY-user-login-vercode" lay-verify="required" placeholder="图形验证码"
+                class="layui-input">
+            </div>
+            <div class="layui-col-xs5">
+              <div style="margin-left: 10px;">
+                <img src="images/captcha.gif" class="layadmin-user-login-codeimg" id="LAY-user-get-vercode">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="layui-form-item">
+          <div class="layui-row">
+            <div class="layui-col-xs7">
+              <label class="layadmin-user-login-icon layui-icon layui-icon-vercode"
+                for="LAY-user-login-vercode"></label>
+              <input type="text" name="vercode" id="LAY-user-login-vercode" lay-verify="required" placeholder="短信验证码"
+                class="layui-input">
+            </div>
+            <div class="layui-col-xs5">
+              <div style="margin-left: 10px;">
+                <button type="button" class="layui-btn layui-btn-primary layui-btn-fluid"
+                  id="LAY-user-getsmscode">获取验证码</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="layui-form-item">
+          <label class="layadmin-user-login-icon layui-icon layui-icon-password" for="LAY-user-login-password"></label>
+          <input type="password" name="password" id="LAY-user-login-password" lay-verify="pass" placeholder="密码"
+            class="layui-input">
+        </div>
+        <div class="layui-form-item">
+          <label class="layadmin-user-login-icon layui-icon layui-icon-password" for="LAY-user-login-repass"></label>
+          <input type="password" name="repass" id="LAY-user-login-repass" lay-verify="required" placeholder="确认密码"
+            class="layui-input">
+        </div>
+        <div class="layui-form-item">
+          <label class="layadmin-user-login-icon layui-icon layui-icon-username" for="LAY-user-login-nickname"></label>
+          <input type="text" name="nickname" id="LAY-user-login-nickname" lay-verify="nickname" placeholder="昵称"
+            class="layui-input">
+        </div>
+        <div class="layui-form-item">
+          <input type="checkbox" name="agreement" lay-skin="primary" title="同意用户协议" checked>
+        </div>
+        <div class="layui-form-item">
+          <button class="layui-btn layui-btn-fluid" lay-submit lay-filter="LAY-user-reg-submit">注册</button>
+        </div>
+        <div class="layui-trans layui-form-item layadmin-user-login-other">
+          <label>社交账号注册</label>
+          <a href="javascript:;"><i class="layui-icon layui-icon-login-qq"></i></a>
+          <a href="javascript:;"><i class="layui-icon layui-icon-login-wechat"></i></a>
+          <a href="javascript:;"><i class="layui-icon layui-icon-login-weibo"></i></a>
+
+          <a href="login.html" class="layadmin-user-jump-change layadmin-link layui-hide-xs">用已有帐号登录</a>
+          <a href="login.html"
+            class="layadmin-user-jump-change layadmin-link layui-hide-sm layui-show-xs-inline-block">登录</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="layui-trans layadmin-user-login-footer">
+      <p>© 2012</p>
+    </div>
+
+  </div>
+  <script type="text/javascript">
+    layui.use(['form', 'layer'], function () {
+
+      // 操作对象
+      var form = layui.form
+        , layer = layui.layer
+        , $ = layui.jquery;
+
+    });
+
+  </script>
+</body>
+
+</html>

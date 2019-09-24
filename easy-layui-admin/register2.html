@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <title>注册</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="plugin/layui/css/layui.css" media="all">
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="plugin/layui/layui.js"></script>
+    <style>
+        /* reg */
+        .login-main {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            width: 350px;
+            margin: 0 auto;
+        }
+
+        .login-main header {
+            margin-top: 150px;
+            height: 35px;
+            line-height: 35px;
+            font-size: 30px;
+            font-weight: 100;
+            text-align: center;
+        }
+
+        .login-main header,
+        .login-main form,
+        .login-main form .layui-input-inline {
+            margin-bottom: 15px;
+        }
+
+        .login-main form .layui-input-inline,
+        .login-main form .layui-input-inline input,
+        .login-main form .layui-input-inline button {
+            width: 100%;
+        }
+
+        .login-main form .login-btn {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login-main">
+        <header class="layui-elip">注册</header>
+        <form class="layui-form">
+            <div class="layui-input-inline">
+                <input type="text" name="account" required lay-verify="required" placeholder="邮箱" autocomplete="off"
+                    class="layui-input">
+            </div>
+            <div class="layui-input-inline login-btn">
+                <button type="submit" class="layui-btn">注册</button>
+            </div>
+            <hr />
+            <p><a href="javascript:;" class="fl">已有账号？立即登录</a><a href="javascript:;" class="fr">忘记密码？</a></p>
+        </form>
+    </div>
+
+    <script type="text/javascript">
+        layui.use(['form'], function () {
+            var form = layui.form
+                , $ = layui.jquery;
+
+            // you code ...
+        });
+    </script>
+</body>
+
+</html>
